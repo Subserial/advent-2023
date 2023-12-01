@@ -46,7 +46,6 @@ pub fn execute_second(data: &str) -> String {
                 .chars()
                 .rev()
                 .collect::<String>();
-            println!("{} {}", first, last);
             let digit_first = MAP_WORD_NUM.get(first)
                 .map(u32::clone)
                 .unwrap_or_else(|| first.parse::<u32>().expect("first not digit"));

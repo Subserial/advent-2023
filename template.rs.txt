@@ -1,0 +1,8 @@
+
+pub fn execute_first(data: &str) -> String {
+    todo!()
+}
+
+pub fn execute_second(data: &str) -> String {
+    todo!()
+}
