@@ -24,7 +24,7 @@ if [ -f "$OUTPUT" ]; then
   echo $OUTPUT exists
 else
   echo Fetching input as $OUTPUT
-  curl --cookie "session=$COOKIE" -o "$OUTPUT" "https://adventofcode.com/2023/day/1/input"
+  curl --cookie "session=$COOKIE" -o "$OUTPUT" "https://adventofcode.com/2023/day/${DAY_DIGITS}/input"
 fi
 
 # I tried to write a rust macro to make this easier. It was not easier.
