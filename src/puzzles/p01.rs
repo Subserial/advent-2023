@@ -1,16 +1,19 @@
-use std::collections::HashMap;
-use std::ops::Deref;
 use lazy_static::lazy_static;
 use regex::Regex;
+use std::collections::HashMap;
+use std::ops::Deref;
 
 pub fn execute_first(data: &str) -> String {
-    let result = data.lines()
+    let result = data
+        .lines()
         .map(|line| {
-            let first = line.chars().find(char::is_ascii_digit)
-                .expect("no digit");
-            let last = line.chars().rev().find(char::is_ascii_digit)
+            let first = line.chars().find(char::is_ascii_digit).expect("no digit");
+            let last = line
+                .chars()
+                .rev()
+                .find(char::is_ascii_digit)
                 .expect("no digit (reversed)");
-            return 10 * first.to_digit(10).unwrap() + last.to_digit(10).unwrap()
+            return 10 * first.to_digit(10).unwrap() + last.to_digit(10).unwrap();
         })
         .sum::<u32>();
     result.to_string()
@@ -34,25 +37,27 @@ lazy_static! {
 }
 
 pub fn execute_second(data: &str) -> String {
-    let result = data.lines()
+    let result = data
+        .lines()
         .map(|line| {
-            let first = REGEX_WORD_NUM.find(line)
-                .expect("no match")
-                .as_str();
+            let first = REGEX_WORD_NUM.find(line).expect("no match").as_str();
             let rev = line.chars().rev().collect::<String>();
-            let last = REGEX_WORD_NUM_REVERSE.find(&rev)
+            let last = REGEX_WORD_NUM_REVERSE
+                .find(&rev)
                 .expect("no match")
                 .as_str()
                 .chars()
                 .rev()
                 .collect::<String>();
-            let digit_first = MAP_WORD_NUM.get(first)
+            let digit_first = MAP_WORD_NUM
+                .get(first)
                 .map(u32::clone)
                 .unwrap_or_else(|| first.parse::<u32>().expect("first not digit"));
-            let digit_last = MAP_WORD_NUM.get(last.deref())
+            let digit_last = MAP_WORD_NUM
+                .get(last.deref())
                 .map(u32::clone)
                 .unwrap_or_else(|| last.parse::<u32>().expect("last not digit"));
-            return 10 * digit_first + digit_last
+            return 10 * digit_first + digit_last;
         })
         .sum::<u32>();
     result.to_string()
