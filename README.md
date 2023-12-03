@@ -1,11 +1,7 @@
 ## Advent Of Code 2023, Rust Edition
 
-Running `get.sh` will initiate work on a puzzle given a session cookie in `cookie.txt`:
-- Record today (according to New York time (wrong)) as `<DAY>`.
-- Retrieve the puzzle input as `src/data/<DAY>.txt`.
-- Append a macro to `src/data/mod.rs` to embed the input.
-- Append `pub mod p<DAY>;` to `src/data/puzzles/mod.rs`.
-- Copy `template.rs.txt` to `src/data/puzzles/p<DAY>.rs`.
-- Open the puzzle in Firefox.
+Running `get.sh` will try to update the project with today's puzzle. I'm not sure how it will act after this month.
 
-Safeguards against overwriting existing values and files are in place.
+### Running Notes
+
+- My initial solutions are very functional, but once they turn ugly I get lost. Not sure if this is due to the operations, but surely there's a way to account for this and make more imperative requirements... better? Managed? Organized?
