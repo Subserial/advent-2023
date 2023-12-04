@@ -17,4 +17,9 @@ fn main() {
         "P03-2: {}",
         puzzles::p03::execute_second(data::DAY_03_INPUT)
     );
+    println!("P04-1: {}", puzzles::p04::execute_first(data::DAY_04_INPUT));
+    println!(
+        "P04-2: {}",
+        puzzles::p04::execute_second(data::DAY_04_INPUT)
+    );
 }
