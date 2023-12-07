@@ -1,35 +1,7 @@
-mod data;
 mod puzzles;
+mod today;
 
 fn main() {
-    println!("P01-1: {}", puzzles::p01::execute_first(data::DAY_01_INPUT));
-    println!(
-        "P01-2: {}",
-        puzzles::p01::execute_second(data::DAY_01_INPUT)
-    );
-    println!("P02-1: {}", puzzles::p02::execute_first(data::DAY_02_INPUT));
-    println!(
-        "P02-2: {}",
-        puzzles::p02::execute_second(data::DAY_02_INPUT)
-    );
-    println!("P03-1: {}", puzzles::p03::execute_first(data::DAY_03_INPUT));
-    println!(
-        "P03-2: {}",
-        puzzles::p03::execute_second(data::DAY_03_INPUT)
-    );
-    println!("P04-1: {}", puzzles::p04::execute_first(data::DAY_04_INPUT));
-    println!(
-        "P04-2: {}",
-        puzzles::p04::execute_second(data::DAY_04_INPUT)
-    );
-    println!("P05-1: {}", puzzles::p05::execute_first(data::DAY_05_INPUT));
-    println!(
-        "P05-2: {}",
-        puzzles::p05::execute_second(data::DAY_05_INPUT)
-    );
-    println!("P06-1: {}", puzzles::p06::execute_first(data::DAY_06_INPUT));
-    println!(
-        "P06-2: {}",
-        puzzles::p06::execute_second(data::DAY_06_INPUT)
-    );
+    println!("Puzzle 1: {}", today::run_one(today::INPUT));
+    println!("Puzzle 2: {}", today::run_two(today::INPUT));
 }

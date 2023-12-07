@@ -1,8 +1,8 @@
 
-pub fn execute_first(_data: &str) -> String {
+pub fn run_one(_data: &str) -> String {
     "0".to_string()
 }
 
-pub fn execute_second(_data: &str) -> String {
+pub fn run_two(_data: &str) -> String {
     "0".to_string()
 }

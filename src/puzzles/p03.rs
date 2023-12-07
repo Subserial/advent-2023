@@ -43,7 +43,7 @@ fn collect(data: &str) -> (HashSet<(u32, u32)>, HashMap<(u32, u32), (u32, u32)>)
 
     (symbols, numbers)
 }
-pub fn execute_first(data: &str) -> String {
+pub fn run_one(data: &str) -> String {
     let (symbols, numbers) = collect(data);
     numbers
         .into_iter()
@@ -63,7 +63,7 @@ pub fn execute_first(data: &str) -> String {
         .to_string()
 }
 
-pub fn execute_second(data: &str) -> String {
+pub fn run_two(data: &str) -> String {
     let charmap = data
         .lines()
         .map(|line| line.chars().collect::<Vec<_>>())

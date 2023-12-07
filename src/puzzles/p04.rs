@@ -1,6 +1,6 @@
 use std::collections::{HashMap, HashSet};
 
-pub fn execute_first(data: &str) -> String {
+pub fn run_one(data: &str) -> String {
     data.lines()
         .map(|line| {
             let (wins, board) = line.split_once(":").unwrap().1.split_once("|").unwrap();
@@ -23,7 +23,7 @@ pub fn execute_first(data: &str) -> String {
         .to_string()
 }
 
-pub fn execute_second(data: &str) -> String {
+pub fn run_two(data: &str) -> String {
     let cards = data
         .lines()
         .map(|line| {

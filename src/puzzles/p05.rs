@@ -1,4 +1,4 @@
-pub fn execute_first(data: &str) -> String {
+pub fn run_one(data: &str) -> String {
     let lines = data.lines().collect::<Vec<_>>();
     let seeds = lines[0]
         .split_once(": ")
@@ -47,7 +47,7 @@ pub fn execute_first(data: &str) -> String {
         .to_string()
 }
 
-pub fn execute_second(data: &str) -> String {
+pub fn run_two(data: &str) -> String {
     let lines = data.lines().collect::<Vec<_>>();
     let seeds = lines[0]
         .split_once(": ")

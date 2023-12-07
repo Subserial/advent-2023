@@ -4,7 +4,7 @@ const RMAX: u32 = 12;
 const GMAX: u32 = 13;
 const BMAX: u32 = 14;
 
-pub fn execute_first(data: &str) -> String {
+pub fn run_one(data: &str) -> String {
     data.lines()
         .map(|line| {
             let (g_no, games) = line.split_once(": ").unwrap();
@@ -29,7 +29,7 @@ pub fn execute_first(data: &str) -> String {
         .to_string()
 }
 
-pub fn execute_second(data: &str) -> String {
+pub fn run_two(data: &str) -> String {
     data.lines()
         .map(|line| {
             let (mut r, mut g, mut b) = (0, 0, 0);

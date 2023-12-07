@@ -3,7 +3,7 @@ use regex::Regex;
 use std::collections::HashMap;
 use std::ops::Deref;
 
-pub fn execute_first(data: &str) -> String {
+pub fn run_one(data: &str) -> String {
     let result = data
         .lines()
         .map(|line| {
@@ -36,7 +36,7 @@ lazy_static! {
     ].into_iter().collect();
 }
 
-pub fn execute_second(data: &str) -> String {
+pub fn run_two(data: &str) -> String {
     let result = data
         .lines()
         .map(|line| {
