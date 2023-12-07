@@ -48,8 +48,8 @@ impl Hand {
 
     fn from_two(s: &str) -> Self {
         let card = s.replace("A", "Z").replace("K", "Y").replace("Q", "X").replace("J", "0").replace("T", "V");
-        let best = "AKQJT987654321".chars().map(|c| {
-            Hand::from_one(&card.replace('0', &String::from(c))).as_count()
+        let best = "ZYXV987654321".chars().map(|c| {
+            Hand::count(&card.replace('0', &String::from(c)))
         }).max().unwrap();
         Hand::from(card, best)
     }
