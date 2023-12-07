@@ -1,4 +1,3 @@
-
 #[derive(Ord, PartialOrd, Eq, PartialEq, Debug)]
 enum Hand {
     High(String),
@@ -41,34 +40,62 @@ impl Hand {
     }
 
     fn from_one(s: &str) -> Self {
-        let card = s.replace("A", "Z").replace("K", "Y").replace("Q", "X").replace("J", "W").replace("T", "V");
+        let card = s
+            .replace("A", "Z")
+            .replace("K", "Y")
+            .replace("Q", "X")
+            .replace("J", "W")
+            .replace("T", "V");
         let count = Hand::count(&card);
         Hand::from(card, count)
     }
 
     fn from_two(s: &str) -> Self {
-        let card = s.replace("A", "Z").replace("K", "Y").replace("Q", "X").replace("J", "0").replace("T", "V");
-        let best = "ZYXV987654321".chars().map(|c| {
-            Hand::count(&card.replace('0', &String::from(c)))
-        }).max().unwrap();
+        let card = s
+            .replace("A", "Z")
+            .replace("K", "Y")
+            .replace("Q", "X")
+            .replace("J", "0")
+            .replace("T", "V");
+        let best = "ZYXV987654321"
+            .chars()
+            .map(|c| Hand::count(&card.replace('0', &String::from(c))))
+            .max()
+            .unwrap();
         Hand::from(card, best)
     }
 }
 
 pub fn run_one(data: &str) -> String {
-    let mut hands: Vec<(Hand, u32)> = data.lines().map(|line| {
-        let (left, right) = line.split_once(" ").unwrap();
-        (Hand::from_one(left), right.parse::<u32>().unwrap())
-    }).collect();
+    let mut hands: Vec<(Hand, u32)> = data
+        .lines()
+        .map(|line| {
+            let (left, right) = line.split_once(" ").unwrap();
+            (Hand::from_one(left), right.parse::<u32>().unwrap())
+        })
+        .collect();
     hands.sort();
-    hands.iter().enumerate().map(|(i, (hand, val))| (i as u32 + 1) * *val).sum::<u32>().to_string()
+    hands
+        .iter()
+        .enumerate()
+        .map(|(i, (hand, val))| (i as u32 + 1) * *val)
+        .sum::<u32>()
+        .to_string()
 }
 
 pub fn run_two(data: &str) -> String {
-    let mut hands: Vec<(Hand, u32)> = data.lines().map(|line| {
-        let (left, right) = line.split_once(" ").unwrap();
-        (Hand::from_two(left), right.parse::<u32>().unwrap())
-    }).collect();
+    let mut hands: Vec<(Hand, u32)> = data
+        .lines()
+        .map(|line| {
+            let (left, right) = line.split_once(" ").unwrap();
+            (Hand::from_two(left), right.parse::<u32>().unwrap())
+        })
+        .collect();
     hands.sort();
-    hands.iter().enumerate().map(|(i, (hand, val))| (i as u32 + 1) * *val).sum::<u32>().to_string()
+    hands
+        .iter()
+        .enumerate()
+        .map(|(i, (hand, val))| (i as u32 + 1) * *val)
+        .sum::<u32>()
+        .to_string()
 }
