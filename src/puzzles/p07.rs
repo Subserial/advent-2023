@@ -95,7 +95,7 @@ pub fn run_two(data: &str) -> String {
     hands
         .iter()
         .enumerate()
-        .map(|(i, (hand, val))| (i as u32 + 1) * *val)
+        .map(|(i, (_, val))| (i as u32 + 1) * *val)
         .sum::<u32>()
         .to_string()
 }
