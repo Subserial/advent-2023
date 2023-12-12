@@ -1,5 +1,5 @@
 use std::cmp::{max, min};
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 
 fn run(data: &str, offset: usize) -> String {
     let galaxies_init: HashSet<(usize, usize)> = data
