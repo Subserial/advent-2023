@@ -1,2 +1,2 @@
-pub use crate::puzzles::p13::*;
+pub use crate::puzzles::p15::*;
 pub const INPUT: &str = include_str!("today.txt");
