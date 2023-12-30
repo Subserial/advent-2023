@@ -2,6 +2,16 @@ mod puzzles;
 mod today;
 
 fn main() {
-    println!("Puzzle 1: {}", today::run_one(today::INPUT));
-    println!("Puzzle 2: {}", today::run_two(today::INPUT));
+    let now = std::time::Instant::now();
+    println!(
+        "Puzzle 1: {} ({}s)",
+        today::run_one(today::INPUT),
+        now.elapsed().as_secs()
+    );
+    let now = std::time::Instant::now();
+    println!(
+        "Puzzle 2: {} ({}s)",
+        today::run_two(today::INPUT),
+        now.elapsed().as_secs()
+    );
 }
